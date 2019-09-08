@@ -37,6 +37,9 @@ android {
         }
     }
 }
+kapt {
+    generateStubs = true
+}
 
 dependencies {
     implementation project(path: ':data')
@@ -54,7 +57,10 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:${rootProject.ext.okhttp3_version}"
 
     implementation "com.google.dagger:dagger:${rootProject.ext.dagger2_vesion}"
+    implementation "com.google.dagger:dagger-android:${rootProject.ext.dagger2_vesion}"
+    implementation "com.google.dagger:dagger-android-support:${rootProject.ext.dagger2_vesion}"
     kapt "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2_vesion}"
+    kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger2_vesion}"
 
     implementation "com.google.code.gson:gson:${rootProject.ext.gson_version}"
     implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofit2_version}"
